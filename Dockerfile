@@ -22,7 +22,7 @@ COPY ./etc/sites-enabled/ /etc/nginx/sites-enabled/
 
 RUN mkdir /dockergen && \
  wget -P /dockergen https://github.com/jwilder/docker-gen/releases/download/0.3.1/docker-gen-linux-amd64-0.3.1.tar.gz && \
- tar -C /dockergen xvzf /dockergen/docker-gen-linux-amd64-0.3.1.tar.gz && \
+ tar xvzf /dockergen/docker-gen-linux-amd64-0.3.1.tar.gz -C /dockergen && \
  mkdir /etc/service/dockergen && \
  /bin/echo -e '#!/bin/sh' > /etc/service/dockergen/run && \
  /bin/echo -e 'exec /dockergen/docker-gen -watch -only-exposed -notify "/usr/sbin/nginx -s reload" /dockergen/nginx.tmpl /etc/nginx/sites-enabled/virtual 2>&1' >> /etc/service/dockergen/run && \
