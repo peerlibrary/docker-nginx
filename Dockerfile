@@ -2,7 +2,6 @@ FROM cloyne/runit
 
 MAINTAINER Mitar <mitar.docker@tnode.com>
 
-ENV DEBIAN_FRONTEND noninteractive
 ENV DOCKER_HOST unix:///docker.sock
 
 EXPOSE 80/tcp
