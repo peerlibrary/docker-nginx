@@ -12,6 +12,7 @@ RUN apt-get update -q -q && \
  chown root:root /etc/service/nginx/run && \
  chmod 755 /etc/service/nginx/run && \
  /bin/echo -e 'daemon off;' >> /etc/nginx/nginx.conf && \
+ sed -i 's/\/\$nginx_version//' /etc/nginx/fastcgi_params && \
  touch /etc/nginx/sites-available/NOT_USED
 
 COPY ./etc/conf.d/ /etc/nginx/conf.d/

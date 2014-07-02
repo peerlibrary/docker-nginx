@@ -2,5 +2,5 @@ server {
     listen 80 default_server;
     server_name _;
     access_log /var/log/nginx/default_access.log;
-    return 503;
+    return 404;
 }
