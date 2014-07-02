@@ -31,7 +31,7 @@ RUN mkdir /dockergen && \
  mkdir /etc/service/dockergen/log && \
  mkdir /var/log/dockergen && \
  /bin/echo -e '#!/bin/sh' > /etc/service/dockergen/log/run && \
- /bin/echo -e 'exec chpst -unobody svlogd -tt /var/log/dockergen' >> /etc/service/dockergen/log/run && \
+ /bin/echo -e 'exec chpst -u nobody:nogroup svlogd -tt /var/log/dockergen' >> /etc/service/dockergen/log/run && \
  chown root:root /etc/service/dockergen/log/run && \
  chmod 755 /etc/service/dockergen/log/run && \
  chown nobody:nogroup /var/log/dockergen
