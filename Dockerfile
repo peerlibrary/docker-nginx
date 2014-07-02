@@ -14,7 +14,8 @@ RUN apt-get update -q -q && \
  /bin/echo -e 'exec /usr/sbin/nginx 2>&1' >> /etc/service/nginx/run && \
  chown root:root /etc/service/nginx/run && \
  chmod 755 /etc/service/nginx/run && \
- /bin/echo -e 'daemon off;' >> /etc/nginx/nginx.conf
+ /bin/echo -e 'daemon off;' >> /etc/nginx/nginx.conf && \
+ touch /etc/nginx/sites-available/NOT_USED
 
 COPY ./etc/conf.d/ /etc/nginx/conf.d/
 COPY ./etc/sites-enabled/ /etc/nginx/sites-enabled/
