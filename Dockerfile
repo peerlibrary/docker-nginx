@@ -1,4 +1,4 @@
-FROM cloyne/runit
+FROM peerlibrary/runit
 
 MAINTAINER Mitar <mitar.docker@tnode.com>
 
